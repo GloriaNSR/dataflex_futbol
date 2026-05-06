@@ -29,9 +29,9 @@ Object oDashboard is a cWebView
 
     Set piMaxWidth to 1024
     
-    Set psCaption to "Dashboard"
+    Set psCaption to "Inicio"
     Set peViewType to vtUndefined
-    Set pbShowCaption to False
+    Set pbShowCaption to True
     Set psCSSClass to "Dashboard"
     
     Object oWebMainPanel is a cWebPanel
@@ -43,32 +43,20 @@ Object oDashboard is a cWebView
         WebSetResponsive piColumnCount rmMobile to 1
         WebSetResponsive piColumnCount rmTabletPortrait to 16
     
-        Object oTiles_grp is a cWebGroup
+        Object oFultbol is a cWebGroup
+            Set piColumnIndex to 0
             Set piColumnSpan to 24
+            Set piColumnCount to 24
             Set pbShowBorder to False
-            Set pbShowCaption to False
-            Set piColumnCount to 12
-            
+            Set pbShowCaption to True
             Set psCSSClass to "TilesGroup"
-    
-            Object oFutbolTile is a cWebHtmlBox
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile Light"
-                Set psHtml to '<div Class="WebCon_Sizer"><div class="Tile_Title">Fútbol</div><div Class="Tile_Subtitle">--</div></div>'
-    
-                Procedure OnLoad
-                    Send UpdateHTML ('<div class="WebCon_Sizer">' + ;
-                                     '<div class="Tile_Title">Futbol</div>' +;
-                                     '<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;
-                                     '</div>')
-                End_Procedure
-                
+            Set psCaption to "Fútbol"
             End_Object
-    
+
             Object oSelectLiga_Tile is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
+                Set piColumnSpan to 4
+                Set piColumnIndex to 2
                 Set psCSSClass to "Tile LightAlternate"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Liga</div><div class="Tile_Subtitle"></div></div>'
                                 
@@ -79,10 +67,11 @@ Object oDashboard is a cWebView
                 End_Procedure
                 
             End_Object
-    
+
             Object oSelectEquipo_Tile is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
+                Set piColumnSpan to 4
+                Set piColumnIndex to 6
                 Set psCSSClass to "Tile Dark"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Equipo</div><div class="Tile_Subtitle"></div></div>'
     
@@ -97,8 +86,8 @@ Object oDashboard is a cWebView
                 
             Object oSelectJugador_Tile is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
+                Set piColumnSpan to 4
+                Set piColumnIndex to 10
                 Set psCSSClass to "Tile DarkOther"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Jugador</div><div class="Tile_Subtitle"></div></div>'
             
@@ -112,7 +101,8 @@ Object oDashboard is a cWebView
             
               Object oSelectPosicion_Tile is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
+                Set piColumnSpan to 4
+                Set piColumnIndex to 14
                 Set psCSSClass to "Tile DarkAlternate"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Posición</div><div class="Tile_Subtitle"></div></div>'
             
@@ -126,8 +116,8 @@ Object oDashboard is a cWebView
     
             Object oSelectEntrenador_Tile is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
+                Set piColumnSpan to 4
+                Set piColumnIndex to 18
                 Set psCSSClass to "Tile DarkAlternate"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Entrenador</div><div class="Tile_Subtitle"></div></div>'
             

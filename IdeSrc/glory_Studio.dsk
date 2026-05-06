@@ -7,33 +7,35 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=2
+SelectedTab=1
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
 Top=21
 Left=0
-Bottom=30
-Right=9
+Bottom=686
+Right=1428
 TabIndex=0
 TabGroup=0
 [Window1]
-Filename=C:\DataFlex Projects\futbol\AppSrc\Dashboard.wo
-ViewType=102
-Top=21
-Left=0
-Bottom=30
-Right=9
-TabIndex=1
-TabGroup=0
-[Window2]
 Filename=C:\DataFlex Projects\futbol\AppSrc\WebApp.src
 ViewType=1
 Top=21
 Left=0
-Bottom=30
-Right=9
-CursorLine=45
-CursorColumn=0
+Bottom=686
+Right=1428
+CursorLine=38
+CursorColumn=29
 TabIndex=2
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\futbol\AppSrc\Dashboard.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=686
+Right=1428
+CursorLine=0
+CursorColumn=0
+TabIndex=1
 TabGroup=0
