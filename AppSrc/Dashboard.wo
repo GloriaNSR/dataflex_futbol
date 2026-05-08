@@ -136,4 +136,3 @@ Object oDashboard is a cWebView
         // Each time this view is shown we will update the appropriate information.
     End_Procedure
 
-End_Object

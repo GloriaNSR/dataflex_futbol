@@ -85,7 +85,7 @@ Object oSelectEntrenador is a cWebView
         End_Object 
 
 // ToDo: Fill in the from-parent child Select view object name for navigate forward
-//        WebRegisterPath ntNavigateForward oSelectView
+        WebRegisterPath ntNavigateForward oSelectEntrenador
 
         Procedure OnRowClick String sRowId
             tWebNavigateData NavigateData

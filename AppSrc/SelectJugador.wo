@@ -39,7 +39,7 @@ Object oSelectJugador is a cWebView
     Object oList is a cWebList
 
 // ToDo: Fill in the from-parent child Select view object name for navigate forward
-//        WebRegisterPath ntNavigateForward oSelectView
+        WebRegisterPath ntNavigateForward oSelectJugador
 
         Procedure OnRowClick String sRowId
             tWebNavigateData NavigateData
