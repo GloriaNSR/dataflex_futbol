@@ -45,7 +45,7 @@ Object oZoomJugador is a cWebView
             Set piColumnSpan to 10
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
+            Set psLabel to "Nombre del Jugador"
         End_Object 
 
         Object ojugadorApellido is a cWebForm
@@ -53,7 +53,7 @@ Object oZoomJugador is a cWebView
             Set piColumnSpan to 10
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Apellido"
+            Set psLabel to "Apellido del Jugador"
         End_Object 
 
         Object ojugadorNacionalidad is a cWebForm
@@ -69,11 +69,12 @@ Object oZoomJugador is a cWebView
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
+            Set psLabel to "Equipo"
             Set pbPromptButton to True
 
 // ToDo: Fill in the from-child parent Select view object name for navigate forward
-//            WebRegisterPath ntNavigateForward oSelectView
+            WebRegisterPath ntNavigateForward oSelectEquipo
+
 
             Procedure OnPrompt
                 Send NavigatePath
@@ -85,11 +86,11 @@ Object oZoomJugador is a cWebView
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
+            Set psLabel to "Liga"
             Set pbPromptButton to True
 
 // ToDo: Fill in the from-child parent Select view object name for navigate forward
-//            WebRegisterPath ntNavigateForward oSelectView
+            WebRegisterPath ntNavigateForward oSelectLiga
 
             Procedure OnPrompt
                 Send NavigatePath
@@ -105,7 +106,7 @@ Object oZoomJugador is a cWebView
             Set pbPromptButton to True
 
 // ToDo: Fill in the from-child parent Select view object name for navigate forward
-//            WebRegisterPath ntNavigateForward oSelectView
+            WebRegisterPath ntNavigateForward oSelectLiga
 
             Procedure OnPrompt
                 Send NavigatePath

@@ -35,10 +35,10 @@
     --df-BtnBackgroundColor: #99c6e8;
     --df-BtnFocusColor: var(--df-MainRegular);
     --df-BtnBorderColor: #f3f3f3;
-    --df-BtnBorderRadius: 28px;
-    --df-BtnBorderStyle: solid;
-    --df-BtnBorderWidth: 2px;
-    --df-BtnHeight: 35px;
+    --df-BtnBorderRadius: 19px;
+    --df-BtnBorderStyle: none;
+    --df-BtnBorderWidth: 1px;
+    --df-BtnHeight: 33px;
     --df-BtnTextColor: #ffffff;
     --df-CelBorderBottom: 0px;
     --df-CelBorderLeft: 0px;
@@ -88,7 +88,7 @@
     --df-FrmBorderTop: 0px;
     --df-Tablet-FrmBorderBottomWidth: 2px;
 
-    --df-CtrHeight: 31px;
+    --df-CtrHeight: 30px;
     --df-CtrTextColor: #181818;
 
     --df-TxtFont: Verdana;
