@@ -14,7 +14,7 @@ Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 
 Object oSelectEquipo is a cWebView
-    Set psCaption to "SelectEquipo"
+    Set psCaption to "Equipos"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
@@ -42,19 +42,19 @@ Object oSelectEquipo is a cWebView
 
         Object oequipoNombre is a cWebColumn
             Entry_Item equipo.Nombre
-            Set psCaption to "equipo.Nombre"
+            Set psCaption to "Nombre"
             Set piWidth to 1201
         End_Object 
 
         Object oligaNombre is a cWebColumn
             Entry_Item liga.Nombre
-            Set psCaption to "liga.Nombre"
+            Set psCaption to "Liga"
             Set piWidth to 1000
         End_Object 
 
         Object oligaPais is a cWebColumn
             Entry_Item liga.Pais
-            Set psCaption to "liga.Pais"
+            Set psCaption to "País"
             Set piWidth to 500
         End_Object 
 
@@ -90,7 +90,7 @@ Object oSelectEquipo is a cWebView
                 Case (NavigateData.eNavigateType = nfFromParent)
 // ToDo: Fill in the from-parent child Select view object name for navigate forward
 Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-//                    Send NavigateForward of oSelectView Self
+                    Send NavigateForward of oSelectJugador Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromChild)
@@ -104,7 +104,7 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
                 Case Else // must be nfUndefined
 // ToDo: Fill in the from-parent child Select view object name for navigate forward
 Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-//                    Send NavigateForward of oSelectView Self
+                    Send NavigateForward of oSelectJugador Self
 
             Case End
         End_Procedure

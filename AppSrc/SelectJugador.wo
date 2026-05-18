@@ -14,7 +14,7 @@ Use cequipoDataDictionary.dd
 Use cjugadorDataDictionary.dd
 
 Object oSelectJugador is a cWebView
-    Set psCaption to "SelectJugador"
+    Set psCaption to "JugadorES"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
@@ -46,13 +46,13 @@ Object oSelectJugador is a cWebView
 
         Object ojugadorNombre is a cWebColumn
             Entry_Item jugador.Nombre
-            Set psCaption to "Nombre del jugador"
+            Set psCaption to "Nombre"
             Set piWidth to 745
         End_Object 
 
         Object ojugadorApellido is a cWebColumn
             Entry_Item jugador.Apellido
-            Set psCaption to "Apellido del jugador"
+            Set psCaption to "Apellido"
             Set piWidth to 745
         End_Object 
 
@@ -71,14 +71,14 @@ Object oSelectJugador is a cWebView
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
             Set peAlign to alignRight
             
-            WebRegisterPath ntNavigateForward oZoomJugador
+            WebRegisterPath ntNavigateForward oZoomJugador ////Navega sin tener por qué relación
 
 
             Procedure OnClick
                 Send NavigatePath
             End_Procedure
 
-            Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
+            Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView //OnGetNavigateForwardData se produce en el InvokingObject. Coge el objeto antes de "viajar"
                 Move True to NavigateData.bReadOnly
             End_Procedure
 
@@ -95,7 +95,7 @@ Object oSelectJugador is a cWebView
                 Case (NavigateData.eNavigateType = nfFromParent)
 // ToDo: Fill in the from-parent child Select view object name for navigate forward
 Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-//                    Send NavigateForward of oSelectView Self
+                    Send NavigateForward of oSelectJugador Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromChild)
@@ -109,7 +109,7 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
                 Case Else // must be nfUndefined
 // ToDo: Fill in the from-parent child Select view object name for navigate forward
 Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-//                    Send NavigateForward of oSelectView Self
+                    Send NavigateForward of oSelectJugador Self     //-----> Navegación con relación teniendo en cuenta la DataDictionary
 
             Case End
         End_Procedure
@@ -150,7 +150,7 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
         End_Object 
     End_Object 
 
-    Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
+    Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject //Evento de la vista en la que invocamos una vista y un objeto
         WebSet pbRender of oNewButton to True
         WebSet pbRender of oDetailButton to True
 
