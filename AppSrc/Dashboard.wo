@@ -11,7 +11,7 @@ Use cWebLabel.pkg
 Use cWebList.pkg
 Use cWebColumn.pkg
 
-Object oDashboard is a cWebView
+Object oDashboard is a cWebView //Creación de la WebView
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
     // Add a DDO Structure 
@@ -34,7 +34,8 @@ Object oDashboard is a cWebView
     Set pbShowCaption to True
     Set psCSSClass to "Dashboard"
     
-    Object oWebMainPanel is a cWebPanel
+    
+    Object oWebMainPanel is a cWebPanel //Creación de panel
         Set piColumnCount to 24
         
         // - - - - - - - - - - - - - - -
@@ -43,7 +44,7 @@ Object oDashboard is a cWebView
         WebSetResponsive piColumnCount rmMobile to 1
         WebSetResponsive piColumnCount rmTabletPortrait to 16
     
-        Object oFultbol is a cWebGroup
+        Object oFultbol is a cWebGroup //Creación de grupo donde aparece las opciones
             Set piColumnIndex to 0
             Set piColumnSpan to 24
             Set piColumnCount to 24

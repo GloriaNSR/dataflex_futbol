@@ -1,6 +1,5 @@
-﻿    Use AllWebAppClasses.pkg
-    
-    Use cConnection.pkg
+﻿Use AllWebAppClasses.pkg    
+Use cConnection.pkg
 Use cWebMenuItem.pkg
 
 Object oApplication is a cApplication
@@ -51,11 +50,10 @@ Object oWebApp is a cWebApp
                     End_Procedure
                 End_Object
 
-                Object oViewMenu is a cWebMenuItem
+                Object oViewMenu is a cWebMenuItem //Posibilidades que aparecen en la hamburguesa.
                     Set psCaption to C_$View
 
-
-                    Object oSelectEntrenadorItem1 is a cWebMenuItem
+                    Object oSelectEntrenadorItem1 is a cWebMenuItem 
                         Set psCaption to "Entrenadores"
 
                         WebRegisterPath ntNavigateBegin oSelectEntrenador
@@ -87,8 +85,6 @@ Object oWebApp is a cWebApp
                                 Send NavigatePath
                         End_Procedure
                     End_Object
-
-
 
                     Object oSelectLigaItem1 is a cWebMenuItem
                         Set psCaption to "Ligas"

@@ -10,6 +10,7 @@ Use cWebColumnButton.pkg
 Use cWebColumn.pkg
 Use ZoomEntrenador.wo
 
+//Datos usados
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
@@ -25,11 +26,11 @@ Object oSelectEntrenador is a cWebView
     Object oliga_DD is a cligaDataDictionary
     End_Object 
 
-    Object oequipo_DD is a cequipoDataDictionary
+    Object oequipo_DD is a cequipoDataDictionary //Equipos según la Liga
         Set DDO_Server To oliga_DD
     End_Object 
 
-    Object oentrenador_DD is a centrenadorDataDictionary
+    Object oentrenador_DD is a centrenadorDataDictionary //Entrenador según el equipo
         Set DDO_Server To oequipo_DD
     End_Object 
 
@@ -37,7 +38,7 @@ Object oSelectEntrenador is a cWebView
     Set Server  To oentrenador_DD
 
 
-    Object oList is a cWebList
+    Object oList is a cWebList //Lista con los datos solicitados
         Set piColumnSpan to 0
         Set psCSSClass to "MobileList"
         Set pbServerOnRowClick to True
@@ -72,7 +73,7 @@ Object oSelectEntrenador is a cWebView
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
             Set peAlign to alignRight
 
-            WebRegisterPath ntNavigateForward oZoomEntrenador
+            WebRegisterPath ntNavigateForward oZoomEntrenador //Al pulsar el botón navegamos a ZoomEntrenador
 
             Procedure OnClick
                 Send NavigatePath
