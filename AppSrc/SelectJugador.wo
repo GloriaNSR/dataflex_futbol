@@ -14,7 +14,7 @@ Use cequipoDataDictionary.dd
 Use cjugadorDataDictionary.dd
 
 Object oSelectJugador is a cWebView
-    Set psCaption to "JugadorES"
+    Set psCaption to "Jugadores"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
@@ -71,7 +71,7 @@ Object oSelectJugador is a cWebView
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
             Set peAlign to alignRight
             
-            WebRegisterPath ntNavigateForward oZoomJugador ////Navega sin tener por qué relación
+            WebRegisterPath ntNavigateForward oZoomJugador
 
 
             Procedure OnClick
@@ -84,8 +84,8 @@ Object oSelectJugador is a cWebView
 
         End_Object 
 
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-        WebRegisterPath ntNavigateForward oSelectJugador
+
+        WebRegisterPath ntNavigateForward oSelectEquipo //Padre
 
         Procedure OnRowClick String sRowId
             tWebNavigateData NavigateData
@@ -93,9 +93,8 @@ Object oSelectJugador is a cWebView
 
             Case Begin
                 Case (NavigateData.eNavigateType = nfFromParent)
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-                    Send NavigateForward of oSelectJugador Self
+
+                    Send NavigateForward of oSelectEquipo Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromChild)
@@ -107,9 +106,8 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
                     Case Break
 
                 Case Else // must be nfUndefined
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-                    Send NavigateForward of oSelectJugador Self     //-----> Navegación con relación teniendo en cuenta la DataDictionary
+
+                    Send NavigateForward of oSelectEquipo Self
 
             Case End
         End_Procedure

@@ -72,7 +72,7 @@ Object oZoomJugador is a cWebView
             Set psLabel to "Nombre del Equipo"
             Set pbPromptButton to True
 
-// ToDo: Fill in the from-child parent Select view object name for navigate forward
+
             WebRegisterPath ntNavigateForward oSelectEquipo
 
 
@@ -89,7 +89,7 @@ Object oZoomJugador is a cWebView
             Set psLabel to "Nombre de la Liga"
             Set pbPromptButton to True
 
-// ToDo: Fill in the from-child parent Select view object name for navigate forward
+
             WebRegisterPath ntNavigateForward oSelectLiga
 
             Procedure OnPrompt
@@ -105,7 +105,7 @@ Object oZoomJugador is a cWebView
             Set psLabel to "Pais de la Liga"
             Set pbPromptButton to True
 
-// ToDo: Fill in the from-child parent Select view object name for navigate forward
+
             WebRegisterPath ntNavigateForward oSelectLiga
 
             Procedure OnPrompt
