@@ -1,9 +1,13 @@
 ﻿Use DataDict.pkg
 
 Open jugador
-Open hijojugador
 Open jugadorposicion
 Open equipo
+
+// Validación de Nacionalidad
+Object oNacionalidadValidation is a CodeValidationTable
+    Set Type_Value to "PAIS"
+End_Object
 
 Class cjugadorDataDictionary is a DataDictionary
     
@@ -11,15 +15,26 @@ Class cjugadorDataDictionary is a DataDictionary
         Forward Send Construct_Object
         Set Main_File to jugador.File_Number
 
+        // Relación soft con tabla padre
         Set Add_Server_File to equipo.File_Number
-
-        Set Add_Client_File to hijojugador.File_Number
+        Set ParentNullAllowed equipo.File_Number to True //Añadido (Soft)
+        
+        // Relación soft con tabla hijo
         Set Add_Client_File to jugadorposicion.File_Number
+   
 
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        
+        //No permite cambiar el valor en el record
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+        
+        
+        Set Key_Field_State Field jugador.ID to True //Añadido (Soft)
+        
+        Set Field_Value_Table Field jugador.Nacionalidad to oNacionalidadValidation //Añadida para la CodeValitationTable
 
     End_Procedure
 

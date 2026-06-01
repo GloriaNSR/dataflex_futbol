@@ -11,9 +11,10 @@ Class cequipoDataDictionary is a DataDictionary
         Forward Send Construct_Object
         Set Main_File to equipo.File_Number
 
-        Set Add_Server_File to liga.File_Number
+        Set Add_Server_File to liga.File_Number        
 
-        Set Add_Client_File to entrenador.File_Number
+        Set Add_Client_File to entrenador.File_Number      
+
         Set Add_Client_File to jugador.File_Number
 
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
@@ -23,6 +24,8 @@ Class cequipoDataDictionary is a DataDictionary
 
     End_Procedure
     
+    
+    /*
     
     //Backout
     
@@ -65,5 +68,7 @@ Class cequipoDataDictionary is a DataDictionary
         End
    
     End_Procedure
+    
+*/
 
 End_Class
